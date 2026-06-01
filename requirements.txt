@@ -1,0 +1,7 @@
+google-cloud-bigquery
+google-cloud-storage
+psutil
+python-dotenv
+requests
+selenium
+webdriver-manager

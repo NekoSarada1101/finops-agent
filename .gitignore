@@ -1,0 +1,6 @@
+.specstory/**
+venv
+credentials.json
+.env
+tmp_downloads/
+__pycache__
