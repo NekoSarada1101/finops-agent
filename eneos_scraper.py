@@ -4,12 +4,10 @@ import glob
 import shutil
 import logging
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from webdriver_manager.chrome import ChromeDriverManager
 from google.cloud import storage
 from datetime import datetime, timedelta, timezone
 
@@ -132,8 +130,8 @@ def setup_driver() -> webdriver.Chrome:
     options.add_experimental_option("prefs", prefs)
     options.binary_location = _resolve_chrome_binary()
 
-    service = Service(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=service, options=options)
+    # Selenium Manager が binary_location の Chrome に一致する ChromeDriver を自動解決する
+    driver = webdriver.Chrome(options=options)
     return driver
 
 

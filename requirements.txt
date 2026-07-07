@@ -4,4 +4,3 @@ psutil
 python-dotenv
 requests
 selenium
-webdriver-manager
