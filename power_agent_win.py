@@ -7,13 +7,13 @@ from finops_common.report import report_metrics as send_power_metrics
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
-CPU_NAME = "AMD Ryzen 7 9700X"
-CPU_IDLE_POWER_W = 15.0
-CPU_MAX_POWER_W = 88.0
+CPU_NAME = "AMD Ryzen 7 9800X3D"
+CPU_IDLE_POWER_W = 20.0
+CPU_MAX_POWER_W = 162.0
 
 
 def get_cpu_power() -> tuple[str, float]:
-    """Windows環境のCPU使用率を計測し、Ryzen 7 9700Xの特性から消費電力(W)を推論する"""
+    """Windows環境のCPU使用率を計測し、Ryzen 7 9800X3Dの特性(PPT 162W)から消費電力(W)を推論する"""
     return estimate_cpu_power_from_util(
         CPU_NAME,
         CPU_IDLE_POWER_W,
